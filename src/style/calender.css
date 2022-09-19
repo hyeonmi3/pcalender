@@ -1,0 +1,28 @@
+.Calender {
+    text-align: center;
+}
+
+.Header {
+    width: 1920px;
+    height: 75px;
+
+    background: #FFFFFF;
+    box-shadow: 4px 4px 15px rgba(200, 200, 200, 0.25);
+
+    display: flex;
+
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.Logo {
+    width: 135px;
+    height: 43px;
+
+    margin-left: 10%;
+    margin-top: 1%;
+}

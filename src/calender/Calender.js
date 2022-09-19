@@ -1,8 +1,8 @@
-import './App.css';
+import '../style/calender.css';
 
-function App() {
+function Calender() {
   return (
-    <div className="App">
+    <div className="Calender">
       {/* 프로젝트 실습 :P Calender */}
       <div className='Header'>
         <img className='Logo' src='Img/PCalender_Logo.png'/>
@@ -11,4 +11,4 @@ function App() {
   );
 }
 
-export default App;
+export default Calender;
