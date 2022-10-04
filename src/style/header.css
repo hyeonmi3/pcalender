@@ -1,4 +1,4 @@
-.Calender {
+.Header {
     text-align: center;
 }
 
@@ -25,27 +25,4 @@
 
     margin-left: 10%;
     margin-top: 1%;
-}
-
-/* Login style */
-.Login_body {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-}
-
-.box {
-    margin-top: 10%;
-
-    box-sizing: border-box;
-
-    width: 463px;
-    height: 635px;
-
-    background: #FFFFFF;
-    border: 1px solid #f0f0f0;
-    box-shadow: 4px 4px 4px 5px rgba(200, 200, 200, 0.25);
-    border-radius: 3px;
 }
