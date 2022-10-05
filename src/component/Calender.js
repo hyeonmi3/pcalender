@@ -8,18 +8,54 @@ const Calender = () => {
   const [getMoment, setMoment] = useState(moment());
 
   const today = getMoment;
-  
+  const firstWeek = today.clone().startOf('month').week();
+  const lastWeek = today.clone().endOf('month').week() === 1 ? 53 : today.clone().endOf('month').week();
+
   const calendarArr = () => {
+    let result = [];
+    let week = firstWeek;
+    for (week; week <= lastWeek; week++) {
+      result = result.concat(
+        <tr className='day' key={week}> {
+          Array(7).fill(0).map((data, index) => {
+            let days = today.clone().startOf('year').week(week).startOf('week').add(index, 'day');
+
+            // 날짜가 오늘이면 이쁜색
+            if (moment().format('YYYYMMDD') === days.format('YYYYMMDD')) {
+              return (
+                <td key={index} style={{ backgroundColor: '#4FD0FE' }} >
+                  <span>{days.format('D')}</span>
+                </td>
+              );
+              // 그 달의 날짜가 아니면 회색
+            } else if (days.format('MM') !== today.format('MM')) {
+              return (
+                <td key={index} style={{ backgroundColor: '#C2C2C2' }} >
+                  <span>{days.format('D')}</span>
+                </td>
+              );
+              // 둘 다 아니면 X
+            } else {
+              return (
+                <td key={index}  >
+                  <span>{days.format('D')}</span>
+                </td>
+              );
+            }
+          })
+        } </tr>);
+    }
+    return result;
   }
 
   return (
     <div className="Calender">
-      <div className="control">
+      <div className="head">
         <button onClick={() => { setMoment(getMoment.clone().subtract(1, 'month')) }} >＜</button>
-        <span>{today.format('YYYY 년 MM 월')}</span>
+        <span>{today.format('YYYY년 MM월')}</span>
         <button onClick={() => { setMoment(getMoment.clone().add(1, 'month')) }} >＞</button>
       </div>
-      <table>
+      <table className='body'>
         <tbody>
           {calendarArr()}
         </tbody>
