@@ -3,8 +3,12 @@ import '../style/header.css';
 function Header() {
   return (
     <div className="Header">
-      <div className='Header'>
-        <img className='Logo' src='Img/PCalender_Logo.png' />
+      <div className='header'>
+        <h2 className='logo'>:P Calender</h2>
+        <nav>
+          <span>LogIn</span>
+          <span>SignUp</span>
+        </nav>
       </div>
     </div>
   );
