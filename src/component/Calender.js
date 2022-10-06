@@ -7,6 +7,9 @@ import moment from 'moment';
 const Calender = () => {
   const [getMoment, setMoment] = useState(moment());
 
+  // 월 영어로 바꾸기 위해서
+  const month = new Date();
+
   const today = getMoment;
   const firstWeek = today.clone().startOf('month').week();
   const lastWeek = today.clone().endOf('month').week() === 1 ? 53 : today.clone().endOf('month').week();
@@ -52,7 +55,8 @@ const Calender = () => {
     <div className="Calender">
       <div className="head">
         <button onClick={() => { setMoment(getMoment.clone().subtract(1, 'month')) }} >＜</button>
-        <span>{today.format('YYYY년 MM월')}</span>
+        {/* <span>{today.format('YYYY년 MM월')}</span> */}
+        {month.toLocaleString("en-US", { month: "long" })}
         <button onClick={() => { setMoment(getMoment.clone().add(1, 'month')) }} >＞</button>
       </div>
       <table className='body'>
