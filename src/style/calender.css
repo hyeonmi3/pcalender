@@ -65,7 +65,6 @@
 
     margin-bottom: 8%;
 
-    border: 1px solid #CDCDCD;
     border-collapse : collapse;
 
     -webkit-touch-callout: none;
@@ -75,8 +74,26 @@
     user-select: none;
 }
 
+.body > tbody > tr > td {
+    width: 100px;
+    height: 100px;
+
+    border: 1px solid #CDCDCD;
+
+    padding-top: 5px;
+}
+
 .body > tbody > tr > td > span {
     margin-left: 6px;
+}
+
+.today > span {
+    padding: 0 6px 0 6px;
+
+    border-radius: 50%;
+
+    background-color: #4FD0FE;
+    color: #FFF;
 }
 
 .day {
