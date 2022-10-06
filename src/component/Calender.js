@@ -26,21 +26,21 @@ const Calender = () => {
             // 날짜가 오늘이면 이쁜색
             if (moment().format('YYYYMMDD') === days.format('YYYYMMDD')) {
               return (
-                <td key={index} style={{ backgroundColor: '#4FD0FE' }} >
+                <td key={index} style={{ backgroundColor: '#6CD8FF', color: '#FFF' }} >
                   <span>{days.format('D')}</span>
                 </td>
               );
               // 그 달의 날짜가 아니면 회색
             } else if (days.format('MM') !== today.format('MM')) {
               return (
-                <td key={index} style={{ backgroundColor: '#C2C2C2' }} >
+                <td key={index} style={{ backgroundColor: '#DEDEDE', color: '#8C8C8C' }} >
                   <span>{days.format('D')}</span>
                 </td>
               );
               // 둘 다 아니면 X
             } else {
               return (
-                <td key={index}  >
+                <td key={index} style={{ color: '#5E5E5E' }}>
                   <span>{days.format('D')}</span>
                 </td>
               );

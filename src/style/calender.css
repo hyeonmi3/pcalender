@@ -17,7 +17,22 @@
     display: flex;
     align-items: center;
 
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
     background-color: #4FD0FE;
+}
+
+.head > button {
+    border: 0;
+    padding: 0;
+
+    margin-bottom: 6px;
+
+    font-size: 30px;
+
+    color: #FFF;
+    background-color:transparent;
 }
 
 .body {
@@ -26,7 +41,12 @@
 
     margin-bottom: 5%;
 
-    /* border-collapse : collapse; */
+    border: 1px solid #CDCDCD;
+    border-collapse : collapse;
+}
+
+.body > tbody > tr > td > span {
+    margin-left: 6px;
 }
 
 .day {
