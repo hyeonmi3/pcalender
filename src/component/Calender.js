@@ -49,33 +49,39 @@ const Calender = () => {
     return result;
   }
 
+  // 월 영어로
   const engmonth = () => {
-    if(today.month() == 0) return 'January';
-    if(today.month() == 1) return 'February';
-    if(today.month() == 2) return 'March';
-    if(today.month() == 3) return 'April';
-    if(today.month() == 4) return 'May';
-    if(today.month() == 5) return 'June';
-    if(today.month() == 6) return 'July';
-    if(today.month() == 7) return 'August';
-    if(today.month() == 8) return 'September';
-    if(today.month() == 9) return 'October';
-    if(today.month() == 10) return 'November';
-    if(today.month() == 11) return 'December';
+    if (today.month() == 0) return 'January';
+    if (today.month() == 1) return 'February';
+    if (today.month() == 2) return 'March';
+    if (today.month() == 3) return 'April';
+    if (today.month() == 4) return 'May';
+    if (today.month() == 5) return 'June';
+    if (today.month() == 6) return 'July';
+    if (today.month() == 7) return 'August';
+    if (today.month() == 8) return 'September';
+    if (today.month() == 9) return 'October';
+    if (today.month() == 10) return 'November';
+    if (today.month() == 11) return 'December';
     else return 'January';
   }
 
   return (
     <div className="Calender">
-      <nav className='month'>
-        <button onClick={() => { setMoment(getMoment.clone().subtract(1, 'month')) }} >＜</button>
-        <h2>{engmonth()} {today.format('YYYY')}</h2>
-        {console.log(today.month())}
-        <button onClick={() => { setMoment(getMoment.clone().add(1, 'month')) }} >＞</button>
+      <nav className='head'>
+        <div className='month'>
+          <button onClick={() => { setMoment(getMoment.clone().subtract(1, 'month')) }} >＜</button>
+          <h2>{engmonth()} {today.format('YYYY')}</h2>
+          <button onClick={() => { setMoment(getMoment.clone().add(1, 'month')) }} >＞</button>
+        </div>
       </nav>
-      <header className="head">
-        {/* 여기는 요일 */}
-      </header>
+      <div className="dayofweek">
+        {['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'].map((el) => (
+          <div className='day_box' key={el}>
+            <span className='text'>{el}</span>
+          </div>
+        ))}
+      </div>
       <table className='body'>
         <tbody>
           {calendarArr()}
