@@ -5,12 +5,13 @@ import { useState } from 'react';
 import moment from 'moment';
 
 const Calender = () => {
-  const [getMoment, setMoment] = useState(moment());
-
   // 월 영어로 바꾸기 위해서
   const month = new Date();
+  const [currentMonth, setCurrentMonth] = useState(new Date());
 
+  const [getMoment, setMoment] = useState(moment());
   const today = getMoment;
+
   const firstWeek = today.clone().startOf('month').week();
   const lastWeek = today.clone().endOf('month').week() === 1 ? 53 : today.clone().endOf('month').week();
 
@@ -40,7 +41,7 @@ const Calender = () => {
               // 둘 다 아니면 X
             } else {
               return (
-                <td key={index} style={{ color: '#5E5E5E' }}>
+                <td key={index} style={{ color: '#5F5F5F' }}>
                   <span>{days.format('D')}</span>
                 </td>
               );
@@ -53,11 +54,14 @@ const Calender = () => {
 
   return (
     <div className="Calender">
-      <div className="head">
+      <div className='month'>
         <button onClick={() => { setMoment(getMoment.clone().subtract(1, 'month')) }} >＜</button>
-        {/* <span>{today.format('YYYY년 MM월')}</span> */}
-        {month.toLocaleString("en-US", { month: "long" })}
+        <h2>{month.toLocaleString("en-US", { month: "long" })} {today.format('YYYY')}</h2>
+        {console.log(month, today)}
         <button onClick={() => { setMoment(getMoment.clone().add(1, 'month')) }} >＞</button>
+      </div>
+      <div className="head">
+        {/* 여기는 요일 */}
       </div>
       <table className='body'>
         <tbody>

@@ -17,12 +17,11 @@
 
     color: #4FD0FE;
 
-    pointer-events: none;
+    -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    -webkit-user-drag: none;
 }
 
 .header > nav {
@@ -35,11 +34,11 @@
 
     color: #9C9C9C;
 
+    -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    -webkit-user-drag: none;
 }
 
 .header > nav > span:first-child {
