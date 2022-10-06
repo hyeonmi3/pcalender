@@ -1,0 +1,8 @@
+/* 스크롤은 살리고 스크롤 바 없애기 */
+body {
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
