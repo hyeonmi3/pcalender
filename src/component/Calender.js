@@ -50,7 +50,7 @@ const Calender = () => {
   }
 
   // 월 영어로
-  const engmonth = () => {
+  const eng_month = () => {
     if (today.month() == 0) return 'January';
     if (today.month() == 1) return 'February';
     if (today.month() == 2) return 'March';
@@ -71,7 +71,7 @@ const Calender = () => {
       <nav className='head'>
         <div className='month'>
           <button onClick={() => { setMoment(getMoment.clone().subtract(1, 'month')) }} >＜</button>
-          <h2>{engmonth()} {today.format('YYYY')}</h2>
+          <h2>{eng_month()} {today.format('YYYY')}</h2>
           <button onClick={() => { setMoment(getMoment.clone().add(1, 'month')) }} >＞</button>
         </div>
       </nav>
