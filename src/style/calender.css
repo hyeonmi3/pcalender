@@ -3,6 +3,8 @@
     width: 100vw;
 
     font-size: 1.5vh;
+
+    margin-top: 15px;
     
     display: flex;
     flex-direction: column;
@@ -14,6 +16,12 @@
 .head {
     width: 1100px;
     height: 50px;
+
+    margin-bottom: 5px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .month {
@@ -53,8 +61,38 @@
     user-select: none;
 }
 
+.month > button:hover {
+    cursor: pointer;
+}
+
+/* 일정 추가 버튼 */
+.add {
+    width: 105px;
+    height: 40px;
+
+    font-size: 18px;
+
+    margin-right: 10px;
+
+    border: 0;
+    border-radius: 40px;
+
+    color: #FFF;
+    background-color: #4FD0FE;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.add:hover {
+    cursor: pointer;
+}
+
 /* 요일 부분 */
-.dayofweek {
+.dayOfweek {
     width: 1100px;
     height: 40px;
 
@@ -85,9 +123,9 @@
 /* 달력 부분 */
 .body {
     width: 1100px;
-    height: 700px;
-
-    margin-bottom:100px;
+    height: 650px;
+    
+    margin-bottom: 150px;
 
     border-collapse : collapse;
 

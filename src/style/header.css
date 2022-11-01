@@ -68,6 +68,10 @@
         display: block;
     }
 
+    .menu:hover {
+        cursor: pointer;
+    }
+
     .header > nav > span {
         display: none;
         pointer-events: none;
