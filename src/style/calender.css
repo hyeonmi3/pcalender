@@ -177,3 +177,23 @@
     font-size: 16px;
     font-weight: 105;
 }
+
+/* 1100px부터 다르게 */
+@media screen and (max-width:1100px) {
+    .head {
+        width: 870px;
+    }
+
+    .month {
+        margin-left: 336px;
+    }
+
+    .dayOfweek {
+        width: 870px;
+    }
+
+    .body {
+        width: 870px;
+        height: 500px;
+    }
+}
