@@ -4,13 +4,25 @@ import '../style/login.css';
 
 function Login() {
   return (
-    <div className="Calender">
-      <div className='Header'>
-        <img className='Logo' src='Img/PCalender_Logo.png'/>
-      </div>
-      {/* 나중에 class 이름들 다 소문자로 하자잉... 다른것도 살려보기 */}
-      <div className='Login_body'>
-        <div className='Login_box'></div>
+    <div className="Login">
+      <div className='login'>
+        <div className='login_box'>
+          {/* 로고 */}
+          <h1 className='login_logo'>:P Calender</h1>
+
+          {/* 입력 */}
+          <div className='id_input'>
+            <label>Id</label>
+            <input />
+          </div>
+          <div className='password_input'>
+            <label>password</label>
+            <input />
+          </div>
+
+          {/* 로그인 버튼 */}
+          <button>LogIn</button>
+        </div>
       </div>
     </div>
   );
