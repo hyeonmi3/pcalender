@@ -69,19 +69,29 @@ const Calender = () => {
   return (
     <div className="Calender">
       <nav className='head'>
+        {/* 월 */}
         <div className='month'>
           <button onClick={() => { setMoment(getMoment.clone().subtract(1, 'month')) }} >＜</button>
           <h2>{eng_month()} {today.format('YYYY')}</h2>
           <button onClick={() => { setMoment(getMoment.clone().add(1, 'month')) }} >＞</button>
         </div>
+
+        {/* 일정 추가 버튼 */}
+        <button className='add' onClick={() => {}}>
+          Add
+        </button>
       </nav>
-      <div className="dayofweek">
+
+      {/* 요일 */}
+      <div className="dayOfweek">
         {['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'].map((el) => (
           <div className='day_box' key={el}>
             <span className='text'>{el}</span>
           </div>
         ))}
       </div>
+      
+      {/* 달력 */}
       <table className='body'>
         <tbody>
           {calendarArr()}
