@@ -89,3 +89,7 @@
     background-color: #4FD0FE;
     color: #FFF;
 }
+
+.login_box > button:hover {
+    cursor: pointer;
+}
