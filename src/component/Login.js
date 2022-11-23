@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import '../style/login.css';
+import '../style/auth.css';
 
 function Login() {
   
@@ -19,7 +18,7 @@ function Login() {
           </div>
           <div className='password_input'>
             <label>password</label>
-            <input id="password" name="password" type="password" />
+            <input id="password" name="password" type="password" placeholder='비밀번호를 입력해주세요' />
           </div>
 
           {/* 로그인 버튼 */}
