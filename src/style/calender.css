@@ -10,6 +10,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    position: relative;
 }
 
 /* 연도, 월 부분 */
@@ -66,7 +68,7 @@
 }
 
 /* 일정 추가 버튼 */
-.add {
+.add_button {
     width: 105px;
     height: 40px;
 
@@ -87,8 +89,13 @@
     user-select: none;
 }
 
-.add:hover {
+.add_button:hover {
     cursor: pointer;
+}
+
+/* add 모달 창 부분 */
+.add {
+    position: absolute;
 }
 
 /* 요일 부분 */

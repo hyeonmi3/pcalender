@@ -11,6 +11,10 @@ const Calender = () => {
 
   const firstWeek = today.clone().startOf('month').week();
   const lastWeek = today.clone().endOf('month').week() === 1 ? 53 : today.clone().endOf('month').week();
+  
+  let [add, setAdd] = useState(false);  
+
+  let date = 20221124;
 
   const calendarArr = () => {
     let result = [];
@@ -21,21 +25,24 @@ const Calender = () => {
           Array(7).fill(0).map((data, index) => {
             let days = today.clone().startOf('year').week(week).startOf('week').add(index, 'day');
 
-            // 날짜가 오늘이면 이쁜색
+            // 날짜가 오늘이면 #4FD0FE
             if (moment().format('YYYYMMDD') === days.format('YYYYMMDD')) {
               return (
-                <td className='today' key={index}>
+                <td className='today' style={{  }} key={index}>
                   <span>{days.format('D')}</span>
+                  <div style={{ width:'100px', height:'20px', marginLeft:'2px', marginTop:'5px', display:'flex', justifyContent:'center', borderRadius:'3px', backgroundColor: '#4FD0FE', color:'#FFF' }}>
+                    설겆이하기
+                  </div>
                 </td>
               );
-              // 그 달의 날짜가 아니면 회색
+              // 그 달의 날짜가 아니면 #EBEBEB
             } else if (days.format('MM') !== today.format('MM')) {
               return (
                 <td key={index} style={{ backgroundColor: '#EBEBEB', color: '#AFAFAF' }} >
                   <span>{days.format('D')}</span>
                 </td>
               );
-              // 둘 다 아니면 X
+              // 둘 다 아니면 #FFF
             } else {
               return (
                 <td key={index} style={{ backgroundColor: '#FFF', color: '#5F5F5F' }}>
@@ -63,11 +70,23 @@ const Calender = () => {
     if (today.month() == 9) return 'October';
     if (today.month() == 10) return 'November';
     if (today.month() == 11) return 'December';
-    else return 'January';
+    else return 'null';
+  }
+
+  function Add() {
+    return(
+      <div className='add'>
+        <h1>이것은 Add창입니다.</h1>
+      </div>
+    );
   }
 
   return (
     <div className="Calender">
+      {
+          add == true ? <Add/> : null
+      }
+
       <nav className='head'>
         {/* 월 */}
         <div className='month'>
@@ -77,7 +96,7 @@ const Calender = () => {
         </div>
 
         {/* 일정 추가 버튼 */}
-        <button className='add' onClick={() => {}}>
+        <button className='add_button' onClick={() => setAdd(!add)}>
           Add
         </button>
       </nav>
